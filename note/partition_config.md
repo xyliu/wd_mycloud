@@ -1,13 +1,10 @@
-%title config partition
-
 # binary 
 
   2 binaries: config_md0.img config_md1.img
 
 # Analysis
 ## hexdump
-
-	{{{
+```
 	$ hexdump -C config_md0.img
 	00000000  79 ba 8f 79 00 00 00 00  87 33 8f 20 1c 02 00 00  |y..y.....3. ....|
 	00000010  00 00 00 00 00 00 00 00  e6 be 0f f8 8d c7 a8 67  |...............g|
@@ -50,9 +47,8 @@
 	00000400  e5 e5 e5 e5 e5 e5 e5 e5  e5 e5 e5 e5 e5 e5 e5 e5  |................|
 	*
 	00100000
-	}}}
-
-	{{{
+```
+```
 	$ hexdump -C config_md1.img
 	00000000  79 ba 8f 79 00 00 00 00  9a b1 73 9b 1c 02 00 00  |y..y......s.....|
 	00000010  00 00 00 00 00 00 00 00  1a 39 50 f2 8d c7 a8 67  |.........9P....g|
@@ -95,11 +91,11 @@
 	00000400  e5 e5 e5 e5 e5 e5 e5 e5  e5 e5 e5 e5 e5 e5 e5 e5  |................|
 	*
 	00100000
-	}}}
+```
 
 ##  uboot 
 
-{{{
+```
 #!/bin/sh
 ## Button initial state
 btn_status=0
@@ -114,10 +110,9 @@ bootargs="$bootargs rootfstype=ext3 rw noinitrd debug initcall_debug sw apaccoun
 bootargs="$bootargs mac_addr=$eth0.ethaddr"
 bootargs="$bootargs model=$model serial=$serial board_test=$board_test btn_status=$btn_status"
 bootm /dev/mem.uImage
-}}}
+```
 
-
-{{{
+```
 #!/bin/sh.
 ## Button initial state
 btn_status=0
@@ -132,4 +127,4 @@ bootargs="$bootargs rootfstype=ext3 rw noinitrd debug initcall_debug sw apaccoun
 bootargs="$bootargs mac_addr=$eth0.ethaddr"
 bootargs="$bootargs model=$model serial=$serial board_test=$board_test btn_status=$btn_status"
 bootm /dev/mem.uImage
-}}}
+```
