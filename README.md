@@ -1,38 +1,61 @@
-# Hardware Spec
+# WD My Cloud Specifications
+
+  * Capacities
+    * 2TB (WDBCTL0020HWT)
+    * 3TB (WDBCTL0030HWT)
+    * 4TB (WDBCTL0040HWT)
+  * Connectors
+    * USB 3.0
+    * Gigabit Ethernet
+  * Physical Dimensions
+    * Height: 6.70 Inches
+    * Depth: 5.50 Inches
+    * Width: 1.90 Inches
+    * Weight 2.12 Pounds
+  * Temperatures
+    * Operating: 41° F to 95° F or 5° C tot 35° C
+    * Non-operating: -4° F to 149° F or -20° C tot 65° C
+  * Processor
+    * Mindspeed Comcerto 2000 (M86261G-12) dual-core ARM Cortex-A9 @650 MHz
+  * Memory
+    * 256 MB of Samsung K4B2G1646E DDR3 RAM
+  * Voltage
+    * AC Input Voltage: 100-240 VAC
+    * AC Input Frequency: 47-63 Hz
 
 ```
-WDMyCloud:~# cat /proc/meminfo
-MemTotal: 232448 kB
-MemFree: 48128 kB
-Buffers: 3840 kB
-Cached: 57856 kB
-SwapCached: 18304 kB
+    WDMyCloud:~# cat /proc/meminfo
+    MemTotal: 232448 kB
+    MemFree: 48128 kB
+    Buffers: 3840 kB
+    Cached: 57856 kB
+    SwapCached: 18304 kB
 
-WDMyCloud:~# cat /proc/scsi/scsi
-Attached devices:
-Host: scsi0 Channel: 00 Id: 00 Lun: 00
-Vendor: ATA Model: WDC WD30EFRX-68E Rev: 82.0
-Type: Direct-Access ANSI SCSI revision: 05
+    WDMyCloud:~# cat /proc/scsi/scsi
+    Attached devices:
+    Host: scsi0 Channel: 00 Id: 00 Lun: 00
+    Vendor: ATA Model: WDC WD30EFRX-68E Rev: 82.0
+    Type: Direct-Access ANSI SCSI revision: 05
 
-WDMyCloud:~# cat /proc/cpuinfo
-Processor : ARMv7 Processor rev 1 (v7l)
-processor : 0
-BogoMIPS : 1292.69
+    WDMyCloud:~# cat /proc/cpuinfo
+    Processor : ARMv7 Processor rev 1 (v7l)
+    processor : 0
+    BogoMIPS : 1292.69
 
-processor : 1
-BogoMIPS : 1299.25
+    processor : 1
+    BogoMIPS : 1299.25
 
-Features : swp half thumb fastmult vfp edsp neon vfpv3 tls
-CPU implementer : 0x41
-CPU architecture: 7
-CPU variant : 0x2
-CPU part : 0xc09
-CPU revision : 1
+    Features : swp half thumb fastmult vfp edsp neon vfpv3 tls
+    CPU implementer : 0x41
+    CPU architecture: 7
+    CPU variant : 0x2
+    CPU part : 0xc09
+    CPU revision : 1
 
-Hardware : Comcerto 2000 EVM
-Revision : 0001
-Serial : 0000000000000000
-```
+    Hardware : Comcerto 2000 EVM
+    Revision : 0001
+    Serial : 0000000000000000
+ ```
 
 ## UART
 
