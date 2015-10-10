@@ -1,4 +1,4 @@
-# WD My Cloud Specifications
+# WD My Cloud [Specifications](http://mybookworld.wikidot.com/my-cloud)
 
   * Capacities
     * 2TB (WDBCTL0020HWT)
