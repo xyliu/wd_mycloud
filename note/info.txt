@@ -1,0 +1,155 @@
+#copy from https://drive.google.com/folderview?id=0B_6OlQ_H0PxVUkJXRzk5ODlscmM&usp=drive_web&tid=0B_6OlQ_H0PxVRXF4aFpYS2dzMEE#list
+#Kudos to Fox_exe
+
+uImage = kernel.img (Install: dd if=uImage of=/dev/sda5)
+
+=========================
+== Only for v1 and v2  ==
+=========================
+# in /lib/modules/3.2.26/modules.symbols
+# Add:
+alias symbol:comcerto_fpp_send_command pfe
+alias symbol:comcerto_fpp_register_event_cb pfe
+
+# in /lib/modules/3.2.26/modules.dep
+# Add:
+kernel/pfe.ko:
+
+# in /etc/modules
+# Add:
+pfe lro_mode=1 tx_qos=1 alloc_on_init=1 disable_wifi_offload=1
+
+# * You can add more modules in /etc/modules
+
+=========================
+== Other useful info:  ==
+=========================
+# Linux MyCloud 3.2.26 #2 SMP Mon Jul 21 19:31:56 YEKT 2014 wd-2.0-rel armv7l GNU/Linux
+
+modules/
+modules/fs
+modules/fs/xfs
+modules/fs/xfs/xfs.ko
+modules/fs/fuse
+modules/fs/fuse/fuse.ko
+modules/fs/fat
+modules/fs/fat/vfat.ko
+modules/fs/fat/msdos.ko
+modules/fs/fat/fat.ko
+modules/fs/ntfs
+modules/fs/ntfs/ntfs.ko
+modules/arch
+modules/arch/arm
+modules/arch/arm/oprofile
+modules/arch/arm/oprofile/oprofile.ko
+modules/net
+modules/net/ipv6
+modules/net/ipv6/netfilter
+modules/net/ipv6/netfilter/ip6_tables.ko
+modules/net/ipv6/netfilter/ip6table_filter.ko
+modules/net/ipv6/netfilter/ip6t_REJECT.ko
+modules/net/ipv4
+modules/net/ipv4/netfilter
+modules/net/ipv4/netfilter/arpt_mangle.ko
+modules/net/bluetooth
+modules/net/bluetooth/bluetooth.ko
+modules/net/l2tp
+modules/net/l2tp/l2tp_core.ko
+modules/net/l2tp/l2tp_ppp.ko
+modules/sound
+modules/sound/core
+modules/sound/core/snd-page-alloc.ko
+modules/sound/core/oss
+modules/sound/core/oss/snd-mixer-oss.ko
+modules/sound/core/oss/snd-pcm-oss.ko
+modules/sound/core/snd.ko
+modules/sound/core/snd-timer.ko
+modules/sound/core/snd-hwdep.ko
+modules/sound/core/snd-pcm.ko
+modules/sound/core/snd-rawmidi.ko
+modules/sound/core/seq
+modules/sound/core/seq/snd-seq.ko
+modules/sound/core/seq/snd-seq-device.ko
+modules/sound/core/seq/snd-seq-midi-event.ko
+modules/sound/core/seq/snd-seq-midi.ko
+modules/sound/soc
+modules/sound/soc/snd-soc-core.ko
+modules/sound/soc/codecs
+modules/sound/soc/codecs/snd-soc-wm8770.ko
+modules/sound/soc/codecs/snd-soc-wm8750.ko
+modules/sound/soc/codecs/snd-soc-wm8985.ko
+modules/sound/soc/codecs/snd-soc-wm8995.ko
+modules/sound/soc/codecs/snd-soc-wm8728.ko
+modules/sound/soc/codecs/snd-soc-wm8753.ko
+modules/sound/soc/codecs/snd-soc-uda134x.ko
+modules/sound/soc/codecs/snd-soc-wm8776.ko
+modules/sound/soc/codecs/snd-soc-wm8983.ko
+modules/sound/soc/codecs/snd-soc-spdif.ko
+modules/sound/soc/codecs/snd-soc-cs4271.ko
+modules/sound/soc/codecs/snd-soc-adav80x.ko
+modules/sound/soc/codecs/snd-soc-wm8510.ko
+modules/sound/soc/codecs/snd-soc-wm8737.ko
+modules/sound/soc/codecs/snd-soc-jz4740-codec.ko
+modules/sound/soc/codecs/snd-soc-wm8711.ko
+modules/sound/soc/codecs/snd-soc-ad73311.ko
+modules/sound/soc/codecs/snd-soc-cx20442.ko
+modules/sound/soc/codecs/snd-soc-wm8727.ko
+modules/sound/soc/codecs/snd-soc-tlv320aic26.ko
+modules/sound/soc/codecs/snd-soc-wm8782.ko
+modules/sound/soc/codecs/snd-soc-pcm3008.ko
+modules/sound/soc/codecs/snd-soc-l3.ko
+modules/sound/soc/codecs/snd-soc-wm8988.ko
+modules/sound/soc/codecs/snd-soc-dfbmcs320.ko
+modules/sound/soc/codecs/snd-soc-ads117x.ko
+modules/sound/soc/codecs/snd-soc-wm8731.ko
+modules/sound/soc/codecs/snd-soc-ak4104.ko
+modules/sound/soc/codecs/snd-soc-wm8804.ko
+modules/sound/soc/codecs/snd-soc-wm8741.ko
+modules/sound/soc/codecs/snd-soc-ssm2602.ko
+modules/sound/soc/codecs/snd-soc-ad193x.ko
+modules/sound/soc/codecs/snd-soc-ad1836.ko
+modules/sound/usb
+modules/sound/usb/snd-usbmidi-lib.ko
+modules/sound/usb/snd-usb-audio.ko
+modules/sound/soundcore.ko
+modules/lib
+modules/lib/crc-ccitt.ko
+modules/drivers
+modules/drivers/net
+modules/drivers/net/ppp
+modules/drivers/net/ppp/ppp_mppe.ko
+modules/drivers/net/ppp/ppp_generic.ko
+modules/drivers/net/ppp/pppox.ko
+modules/drivers/net/ppp/pppoe.ko
+modules/drivers/net/ppp/ppp_deflate.ko
+modules/drivers/net/slip
+modules/drivers/net/slip/slhc.ko
+modules/drivers/net/usb
+modules/drivers/net/usb/net1080.ko
+modules/drivers/net/usb/zaurus.ko
+modules/drivers/net/usb/cdc_ether.ko
+modules/drivers/net/usb/usbnet.ko
+modules/drivers/net/usb/rtl8150.ko
+modules/drivers/net/usb/cdc_ncm.ko
+modules/drivers/net/usb/cdc_subset.ko
+modules/drivers/net/usb/asix.ko
+modules/drivers/bluetooth
+modules/drivers/bluetooth/bpa10x.ko
+modules/drivers/bluetooth/btmrvl.ko
+modules/drivers/bluetooth/btusb.ko
+modules/drivers/bluetooth/bfusb.ko
+modules/drivers/bluetooth/hci_vhci.ko
+modules/drivers/bluetooth/bcm203x.ko
+modules/drivers/bluetooth/ath3k.ko
+modules/drivers/bluetooth/hci_uart.ko
+modules/drivers/base
+modules/drivers/base/regmap
+modules/drivers/base/regmap/regmap-spi.ko
+modules/drivers/scsi
+modules/drivers/scsi/scsi_wait_scan.ko
+modules/drivers/scsi/scsi_tgt.ko
+modules/crypto
+modules/crypto/ocf
+modules/crypto/ocf/cryptosoft.ko
+modules/crypto/ocf/cryptodev.ko
+modules/crypto/ocf/ocf.ko
