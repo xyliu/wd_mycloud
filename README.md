@@ -1,4 +1,43 @@
 # Hardware Spec
+
+```
+WDMyCloud:~# cat /proc/meminfo
+MemTotal: 232448 kB
+MemFree: 48128 kB
+Buffers: 3840 kB
+Cached: 57856 kB
+SwapCached: 18304 kB
+
+WDMyCloud:~# cat /proc/scsi/scsi
+Attached devices:
+Host: scsi0 Channel: 00 Id: 00 Lun: 00
+Vendor: ATA Model: WDC WD30EFRX-68E Rev: 82.0
+Type: Direct-Access ANSI SCSI revision: 05
+
+WDMyCloud:~# cat /proc/cpuinfo
+Processor : ARMv7 Processor rev 1 (v7l)
+processor : 0
+BogoMIPS : 1292.69
+
+processor : 1
+BogoMIPS : 1299.25
+
+Features : swp half thumb fastmult vfp edsp neon vfpv3 tls
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant : 0x2
+CPU part : 0xc09
+CPU revision : 1
+
+Hardware : Comcerto 2000 EVM
+Revision : 0001
+Serial : 0000000000000000
+```
+
+## UART
+
+![Pins](https://lh6.googleusercontent.com/mMq8Ek3fgsBwV7KRuI7jRG-CG1Iq4OzE1aY5vAI0sqTUpRNHTSLkkFW0IWFo6ANe-IF-bg=s190)
+
 # Partition Topology
 
 ```
