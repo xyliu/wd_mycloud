@@ -191,7 +191,9 @@ BTSync may have protential security issue, so hold on.
 
 ## rsync
 
- ` rsync `
+ ` rsync -avhPSe "ssh -T -c arcfour -o Compression=no" usename@server.ip:"location/of/files" "destination/of/files/"`
+
+  `rsync -avh --no-compress --progress -e "ssh -T -c arcfour -o Compression=no -x" usename@server.ip:"location/of/files" "destination/of/files/"`
 
 Note: The bottle neck is CPU. AVG speed is 10MB/s via Arcfour or 8MB/s with default cipher algorithm
 
