@@ -104,6 +104,8 @@ Partition Table: gpt
 Software:
 
   * [Firmware Release 4.04.01-112 (10/21/2015)](http://download.wdc.com/nas/sq-040401-112-20151013.deb.zip)
+  `wget -c http://download.wdc.com/nas/sq-040401-112-20151013.deb.zip`
+
   * CacheVolume/upgrade/rootfs.img extracted from Firmware
 
 ```
@@ -120,11 +122,11 @@ Software:
   $ cp boot/uImage /tmp/kernel.img
 ```
 
-  * config extracetd from
+  * config_md[0,1].img extracetd from
 
 ```
-  $ cp /mnt/img/usr/local/share/k1m0.env /tmp/config0.img
-  $ cp /mnt/img/usr/local/share/k1m1.env /tmp/config1.img
+  $ cp /mnt/img/usr/local/share/k1m0.env /tmp/config_md0.img
+  $ cp /mnt/img/usr/local/share/k1m1.env /tmp/config_md1.img
 
 ```
 
