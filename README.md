@@ -222,6 +222,16 @@ BTSync may have protential security issue, so hold on.
 
 # Daily Usage
 
+## Disable some impractical service
+[Ralphael's suggesion:](https://community.wd.com/t/before-you-pack-up-your-wd-and-return-it-lets-talk-about-copying-speeds/91887)
+
+```
+  /etc/init.d/wdmcserverd stop
+  /etc/init.d/wdphotodbmergerd stop
+  update-rc.d wdphotodbmergerd disable
+  update-rc.d wdmcserverd disable
+```
+
 ## rsync
 
  ` rsync -avhPSe "ssh -T -c arcfour -o Compression=no" usename@server.ip:"location/of/files" "destination/of/files/"`
