@@ -82,10 +82,10 @@ Partition Table: gpt
 
   Note:
    * size(4) = [4828MB, TotalSize - 1MB]
-   * Replace original hard disk with arbitary size hard disk according to the above topology 
+   * Replace original hard disk with arbitary size hard disk according to the above topology
 
 # Recovery/Setup
-## Install with Fox_exe's [script](script/install.sh) 
+## Install with Fox_exe's [script](script/install.sh)
 [HowTo](https://drive.google.com/folderview?id=0B_6OlQ_H0PxVUENWT2UwQTIyb2s&usp=drive_web&tid=0B_6OlQ_H0PxVRXF4aFpYS2dzMEE):
 ```
     Eng:
@@ -100,6 +100,37 @@ Partition Table: gpt
     6. After ~10min device reboots. All done. Try you new firmware!
     * Optional: Run "/run_me_after_reboot.sh" for few tweaks and cleanup.
 ```
+
+Software:
+
+  * [Firmware Release 4.04.01-112 (10/21/2015)](http://download.wdc.com/nas/sq-040401-112-20151013.deb.zip)
+  * CacheVolume/upgrade/rootfs.img extracted from Firmware
+
+```
+  $ unzip sq-040401-112-20151013.deb.zip
+  $ ar xf sq-040401-112-20151013.deb
+  $ unxz data.tar.lzma
+  $ cp CacheVolume/upgrade/rootfs.img /tmp/rootfs.img
+```
+
+  * boot/uImage extracted from rootfs.img
+
+```
+  $ mout rootfs.img /mnt/img
+  $ cp boot/uImage /tmp/kernel.img
+```
+
+  * config extracetd from
+
+```
+  $ cp /mnt/img/usr/local/share/k1m0.env /tmp/config0.img
+  $ cp /mnt/img/usr/local/share/k1m1.env /tmp/config1.img
+
+```
+
+Reference:
+
+  var/lib/dpkg/info/kernel-mindspeed-sequoia.postinst
 
 ## Debrick with Fox_exe's [guide](https://drive.google.com/folderview?id=0B_6OlQ_H0PxVRXF4aFpYS2dzMEE&usp=drive_web)
 
