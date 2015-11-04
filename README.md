@@ -232,6 +232,10 @@ BTSync may have protential security issue, so hold on.
   update-rc.d wdmcserverd disable
 ```
 
+## remove .wdmc
+
+  `find /DataVolume/shares -name "*.wdmc" -exec rm -rf {} \;`
+
 ## rsync
 
  ` rsync -avhPSe "ssh -T -c arcfour -o Compression=no" usename@server.ip:"location/of/files" "destination/of/files/"`
