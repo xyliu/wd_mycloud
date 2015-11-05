@@ -104,6 +104,7 @@ Partition Table: gpt
 Software:
 
   * [Firmware Release 4.04.01-112 (10/21/2015)](http://download.wdc.com/nas/sq-040401-112-20151013.deb.zip)
+
   `wget -c http://download.wdc.com/nas/sq-040401-112-20151013.deb.zip`
 
   * CacheVolume/upgrade/rootfs.img extracted from Firmware
@@ -206,10 +207,28 @@ shutdown -p -H 0
 ```
 
 # Customize
+
+## basic
+
+There are guides on how to build the software from source code:
+
+  * [GUIDE: Building packages for the new firmware](http://community.wd.com/t5/My-Cloud/GUIDE-Building-packages-for-the-new-firmware-someone-tried-it/td-p/768007)
+  * [APP: NZBGet v15.0 for firmware V4+ (06/2015)](http://community.wd.com/t5/My-Cloud/APP-NZBGet-v15-0-for-firmware-V4-06-2015/td-p/881356)
+
+
 ## kernel
 ## rootfs
 ## software
 ### samba
+
+#### reference
+ * [Chapter 45. Samba Performance Tuning](https://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/speed.html)
+ * [Make Samba Go Faster](https://wiki.amahi.org/index.php/Make_Samba_Go_Faster)
+ * [only-around-50mb-sec-max-network-transfer-had-70-100mb-s-on-windows](http://askubuntu.com/questions/329933/only-around-50mb-sec-max-network-transfer-had-70-100mb-s-on-windows-ubuntu-rep)
+ * [Which to use NFS or Samba?](http://askubuntu.com/questions/7117/which-to-use-nfs-or-samba/7124#7124)
+ * [Samba Optimizations](https://calomel.org/samba_optimize.html)
+ * [tuning](http://arstechnica.com/civis/viewtopic.php?f=16&t=1203625)
+
 ### git
 ### nfs
 ### sshfs
