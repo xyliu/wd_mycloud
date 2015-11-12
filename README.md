@@ -221,6 +221,7 @@ There are guides on how to build the software from source code:
 ## software
 ### samba
 
+
 #### reference
  * [Chapter 45. Samba Performance Tuning](https://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/speed.html)
  * [Make Samba Go Faster](https://wiki.amahi.org/index.php/Make_Samba_Go_Faster)
@@ -231,6 +232,59 @@ There are guides on how to build the software from source code:
 
 ### git
 ### nfs
+  My Cloud's default setting:
+ 
+```
+# Use nobody user (uid 65534) for nfs guest.  This is restricted from private
+# shares by ACLs.
+#
+/nfs *(rw,all_squash,sync,no_subtree_check,insecure,crossmnt,anonuid=65534,anongid=1000)
+```
+###vsftp
+```
+#vsftpd.conf
+
+ftpd_banner=Welcome to WD My Cloud
+listen=yes
+listen_port=21
+accept_timeout=60
+connect_timeout=60
+data_connection_timeout=300
+max_clients=0
+max_per_ip=20
+xferlog_enable=YES
+hide_ids=YES
+dirlist_enable=YES
+download_enable=YES
+use_localtime=YES
+write_enable=YES
+file_open_mode=0755
+local_enable=YES
+local_umask=02
+local_max_rate=0
+anon_root=/nfs
+local_root=/nfs
+check_shell=NO
+chroot_local_user=YES
+userlist_enable=YES
+userlist_deny=NO
+userlist_file=/etc/user_list
+vsftpd_log_file=/var/log/vsftpd.log
+anonymous_enable=NO
+anon_mkdir_write_enable=NO
+anon_upload_enable=NO
+anon_world_readable_only=YES
+anon_other_write_enable=NO
+no_anon_password=YES
+anon_max_rate=0
+anon_umask=077
+#share_acl_enable=YES
+pasv_enable=YES
+pasv_promiscuous=YES
+pasv_min_port=5000
+pasv_max_port=5099
+```
+
 ### sshfs
 ### nginx
 ### OpenMediaVault
@@ -250,6 +304,10 @@ BTSync may have protential security issue, so hold on.
   update-rc.d wdphotodbmergerd disable
   update-rc.d wdmcserverd disable
 ```
+
+Otherwise will scan media file and generate the thumbnails like following, which makes CPU busy.
+
+`convert -define jpeg:size=192x192 /shares/Public/Shared Pictures/test/IMG_0499.JPG -auto-orient -strip -background #000000 -quality 80 -filter box -resize x192 /shares/.wdmc/Public/Shared Pictures/test/transcoded_files/IMG_0499.cb62bbdd389b48898f2e5244977cb2c5.jpg`
 
 ## remove .wdmc
 
