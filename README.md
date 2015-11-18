@@ -217,6 +217,8 @@ There are guides on how to build the software from source code:
 
 
 ## kernel
+  It's better to re-create the kernel from the source code. So here comes the method in [Unbricking without opening](https://community.wd.com/t/unbricking-without-opening/95064)
+
 ## rootfs
 ## software
 ### samba
