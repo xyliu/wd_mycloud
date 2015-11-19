@@ -306,6 +306,9 @@ BTSync may have protential security issue, so hold on.
   update-rc.d wdphotodbmergerd disable
   update-rc.d wdmcserverd disable
 ```
+## config network connection
+
+ `@reboot /sbin/ethtool -s eth0 speed 100 duplex full autoneg off && /bin/sleep 5 && /usr/sbin/service networking restart`
 
 Otherwise will scan media file and generate the thumbnails like following, which makes CPU busy.
 
