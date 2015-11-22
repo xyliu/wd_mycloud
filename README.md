@@ -131,6 +131,20 @@ Software:
 
 ```
 
+detailed steps:
+
+```
+cd /soft/
+dpkg -x sq-040102-417-20141211.deb rootfs
+cd rootfs
+cp ./CacheVolume/upgrade/rootfs.img /soft
+mount ./CacheVolume/upgrade/rootfs.img /mnt/img
+cp /mnt/img/usr/local/share/k1m0.env /soft
+cp /mnt/img/usr/local/share/k1m1.env /soft
+cp /mnt/img/boot/uImage /soft/
+umount /mnt/img
+```
+
 Reference:
 
   var/lib/dpkg/info/kernel-mindspeed-sequoia.postinst
@@ -235,7 +249,7 @@ There are guides on how to build the software from source code:
 ### git
 ### nfs
   My Cloud's default setting:
- 
+
 ```
 # Use nobody user (uid 65534) for nfs guest.  This is restricted from private
 # shares by ACLs.
