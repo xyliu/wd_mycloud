@@ -39,11 +39,13 @@ func ReadLine(fileName string, dic map[string]int, handler func(string, map[stri
 	if err != nil {
 		return err
 	}
-	buf := bufio.NewReader(f)
-	for {
-		line, err := buf.ReadString('\n')
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := scanner.Text()
 		line = strings.TrimSpace(line)
+
 		handler(line, dic)
+		err := scanner.Err()
 		if err != nil {
 			if err == io.EOF {
 				return nil
@@ -51,6 +53,7 @@ func ReadLine(fileName string, dic map[string]int, handler func(string, map[stri
 			return err
 		}
 	}
+
 	return nil
 }
 
