@@ -190,6 +190,9 @@ set 2 raid on
 7. Format data partition:
 mkfs -t ext4 /dev/sdb4
 
+7-1. Format the swap partition:
+mkswap /dev/sda3
+
 8-1. Prepare main RAID partition (For rootfs): mdadm --create /dev/md0 --level=1 --metadata=0.9 --raid-devices=2 /dev/sdb1 /dev/sdb2
 * Type "watch cat /proc/mdstat" and wait 100%. Then - [ctrl] + [c] for close.
 
