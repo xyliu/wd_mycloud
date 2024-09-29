@@ -59,7 +59,7 @@
 
 ## UART
 
-![Pins](https://lh6.googleusercontent.com/mMq8Ek3fgsBwV7KRuI7jRG-CG1Iq4OzE1aY5vAI0sqTUpRNHTSLkkFW0IWFo6ANe-IF-bg=s190)
+![Pins](note/UART_pinouts.jpg)
 
 # Partition Topology
 
